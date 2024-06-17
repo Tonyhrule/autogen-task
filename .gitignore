@@ -190,3 +190,9 @@ notebook/result.png
 samples/apps/autogen-studio/autogenstudio/models/test/
 
 notebook/coding
+
+#myfiles
+
+.env
+.OAI_CONFIG_LIST
+
