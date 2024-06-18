@@ -1,9 +1,14 @@
+import numpy as np
+from numpy.linalg import inv
+import copy
+
 freader = open('inverse_matrix.in', 'r')
 n = int(freader.readline())
 matrix = []
 for _ in range(n):
     matrix.append(list(map(int, freader.readline().split())))
 freader.close()
+matrix_2 = copy.deepcopy(matrix)
 
 identity_matrix = [[1,0,0],[0,1,0],[0,0,1]]
 row_index = list(range(n))
@@ -25,3 +30,7 @@ for row in range(n): #finding equalizer to make diagonals as 1
             identity_matrix[out_x][out_y] = identity_matrix[out_x][out_y] - equalizer2 * identity_matrix[row][out_y]
 
 print(identity_matrix)
+np_matrix = np.array(matrix_2)
+print(np_matrix)
+inverse = np.linalg.inv(np_matrix)
+print(inverse)
